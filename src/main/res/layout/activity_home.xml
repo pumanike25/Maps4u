@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvStepCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="Steps: 0"/>
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circle_background"
+            android:contentDescription="Profile Image"
+            android:layout_gravity="end"/>
+
+        <TextView
+            android:id="@+id/currentloc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Current location:"
+            android:textSize="24sp"
+            android:layout_marginTop="30dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    android:id="@+id/locinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Current Location"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:padding="12dp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/desiredloc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Desired location:"
+                    android:textSize="24sp"
+                    android:layout_marginTop="20dp"/>
+
+                <EditText
+                    android:id="@+id/desiredinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Desired Location"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:padding="12dp"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:id="@+id/button_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Location"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/button_desired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit Desired Location"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/toggleMapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toggle Map View"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/topLayout"
+        android:layout_marginTop="10dp"/>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_below="@id/toggleMapButton"/>
+</RelativeLayout>
