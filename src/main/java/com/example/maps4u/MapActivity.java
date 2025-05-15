@@ -364,7 +364,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         String url = "https://maps.googleapis.com/maps/api/directions/json?" +
                 "origin=" + origin.latitude + "," + origin.longitude +
                 "&destination=" + destination.latitude + "," + destination.longitude +
-                "&key=AIzaSyBRRYcfpclBBTLzVxdyVNTVbvAj3BfSQYI";
+                "&key=...";
 
         Log.d("DirectionsAPI", "Request URL: " + url); // Add this line
 
